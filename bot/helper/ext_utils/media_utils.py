@@ -214,8 +214,8 @@ async def take_ss(video_file, ss_nb) -> bool:
                 "1",
                 "-frames:v",
                 "1",
-                "-threads",
-                f"{max(1, cpu_no // 2)}",
+            "-threads",
+            f"{max(1, cpu_no // 2)}",
                 output,
             ]
             cap_time += interval
@@ -298,7 +298,7 @@ async def get_video_thumbnail(video_file, duration):
         "-vframes",
         "1",
         "-threads",
-        "1",
+        f"{max(1, cpu_no // 2)}",
         output,
     ]
     try:
