@@ -49,6 +49,7 @@ async def task_status(_, message):
 ⌬ <b><u>Bot Stats</u></b>
 ┟ <b>CPU</b> → {cpu_percent()}% | <b>F</b> → {free} [{round(100 - disk_usage(DOWNLOAD_DIR).percent, 1)}%]
 ┖ <b>RAM</b> → {virtual_memory().percent}% | <b>UP</b> → {currentTime}
+"""
         reply_message = await send_message(message, msg)
         await auto_delete_message(message, reply_message)
     else:
