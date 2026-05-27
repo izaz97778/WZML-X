@@ -31,6 +31,7 @@ pybase64
 pycountry
 pymongo
 pyrofork==2.2.11
+pymediainfo==6.0.1
 python-dotenv
 python-magic
 qbittorrent-api
@@ -44,4 +45,3 @@ uvloop==0.21.0
 xattr
 yt-dlp[default,curl-cffi]
 pytz
-pymediainfo==7.0.1
