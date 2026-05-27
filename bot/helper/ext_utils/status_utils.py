@@ -233,10 +233,6 @@ async def get_readable_message(sid, is_user, page_no=1, status="All", page_step=
             msg += f"\n🔹<b>Sub Name</b> » <i>{task.listener.subname}</i>"
         elapsed = time() - task.listener.message.date.timestamp()
 
-        msg += f"\n\n<b>Task By {task.listener.message.from_user.mention(style='html')} </b>"
-        if task.listener.is_super_chat:
-            msg += f" <i>[<a href='{task.listener.message.link}'>Link</a>]</i>"
-
         if (
             tstatus not in [MirrorStatus.STATUS_SEED, MirrorStatus.STATUS_QUEUEUP]
             and task.listener.progress
@@ -275,6 +271,9 @@ async def get_readable_message(sid, is_user, page_no=1, status="All", page_step=
         msg += f"\n🔹<b>Engine</b> » <i>{task.engine}</i>"
         msg += f"\n🔹<b>In Mode</b> » <i>{task.listener.mode[0]}</i>"
         msg += f"\n🔹<b>Out Mode</b> » <i>{task.listener.mode[1]}</i>"
+        msg += f"\n\n<b>Task By {task.listener.message.from_user.mention(style='html')} </b>"
+        if task.listener.is_super_chat:
+            msg += f" <i>[<a href='{task.listener.message.link}'>Link</a>]</i>"
         # TODO: Add Bt Sel
         from ..telegram_helper.bot_commands import BotCommands
 
