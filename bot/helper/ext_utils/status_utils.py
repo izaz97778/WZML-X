@@ -251,7 +251,7 @@ async def get_readable_message(sid, is_user, page_no=1, status="All", page_step=
                 msg += f"\n✦<b>Count:</b> » <b>{count}</b>"
             msg += f"\n✦<b>Status</b> » <b>{tstatus}</b>"
             msg += f"\n✦<b>Speed</b> » <i>{task.speed()}</i>"
-            msg += f"\n✦<b>Time</b> » <i>{task.eta()} of {get_readable_time(elapsed + get_raw_time(task.eta()))} ( {get_readable_time(elapsed)} )</i>"
+            msg += f"\n✦<b>Time</b> » <i>{task.eta()} » {get_readable_time(elapsed + get_raw_time(task.eta()))} » {get_readable_time(elapsed)}</i>"
             if tstatus == MirrorStatus.STATUS_DOWNLOAD and (
                 task.listener.is_torrent or task.listener.is_qbit
             ):
@@ -269,8 +269,7 @@ async def get_readable_message(sid, is_user, page_no=1, status="All", page_step=
         else:
             msg += f"\n✦<b>Size</b> » <i>{task.size()}</i>"
         msg += f"\n✦<b>Engine</b> » <i>{task.engine}</i>"
-        msg += f"\n✦<b>In Mode</b> » <i>{task.listener.mode[0]}</i>"
-        msg += f"\n✦<b>Out Mode</b> » <i>{task.listener.mode[1]}</i>"
+        msg += f"\n✦<b>In</b> » <i>{task.listener.mode[0]}</i><b>Out</b> » <i>{task.listener.mode[1]}</i>"
         msg += f"\n✦<b>Task By {task.listener.message.from_user.mention(style='html')} </b>"
         if task.listener.is_super_chat:
             msg += f" <i>[<a href='{task.listener.message.link}'>Link</a>]</i>"
