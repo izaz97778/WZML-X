@@ -251,7 +251,7 @@ async def get_readable_message(sid, is_user, page_no=1, status="All", page_step=
                 msg += f"\n✦<b>Count:</b> » <b>{count}</b>"
             msg += f"\n✦<b>Status</b> » <b>{tstatus}</b>"
             msg += f"\n✦<b>Speed</b> » <i>{task.speed()}</i>"
-            msg += f"\n✦<b>Time</b> » <i>{task.eta()} » {get_readable_time(elapsed + get_raw_time(task.eta()))} » {get_readable_time(elapsed)}</i>"
+            msg += f"\n✦<b>Time</b> » <i>{task.eta()} » {get_readable_time(elapsed)}</i>"
             if tstatus == MirrorStatus.STATUS_DOWNLOAD and (
                 task.listener.is_torrent or task.listener.is_qbit
             ):
