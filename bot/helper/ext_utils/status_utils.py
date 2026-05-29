@@ -284,7 +284,7 @@ async def get_readable_message(sid, is_user, page_no=1, status="All", page_step=
         else:
             msg = f"No Active {status} Tasks!\n\n"
 
-    msg += "✦ <b>Bot Stats</b>\n"
+    msg += "✦ <b>Bot Stats </b>"
     buttons = ButtonMaker()
     if not is_user:
         buttons.data_button("📜 TStats", f"status {sid} ov", position="header")
