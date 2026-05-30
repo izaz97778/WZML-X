@@ -294,7 +294,7 @@ async def get_readable_message(sid, is_user, page_no=1, status="All", page_step=
     buttons = ButtonMaker()
     if not is_user:
         buttons.data_button("📜 TStats", f"status {sid} ov", position="header")
-    if len(tasks) > STATUS_LIMIT »
+    if len(tasks) > STATUS_LIMIT:
         msg += f"\n┟ <b>Page »</b> {page_no}/{pages} | <b>Tasks »</b> {tasks_no} | <b>Step »</b> {page_step}"
         buttons.data_button("<<", f"status {sid} pre", position="header")
         buttons.data_button(">>", f"status {sid} nex", position="header")
